@@ -1,0 +1,1 @@
+will hold a drawing for workers Koombea to the game of love and friendship
