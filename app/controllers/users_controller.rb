@@ -7,7 +7,6 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
-    @users = current_user
   end
 
   def create
