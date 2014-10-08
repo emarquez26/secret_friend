@@ -6,7 +6,7 @@
   <%= form_for(@user) do |f| %>
     <div class="field">
       <%= f.label :name %><br>
-      <%= f.text_field :name,:size=>"50",:readonly => true %>
+      <%= f.text_field :name,:size=>"50",:readonly => true,:value => @users %>
     </div><br>
     <div class="field">
       <%= f.label :like %><br>
