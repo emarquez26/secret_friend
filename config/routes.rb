@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   resources :users
   get 'play/index'
   post 'play/index'
+  root 'users#new'
 end

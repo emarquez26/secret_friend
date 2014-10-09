@@ -16,6 +16,9 @@
       <%= f.label :dislike %><br>
       <%= f.text_area :dislike, :rows => 8, :cols => 50 %>
     </div>
+    <div class="field">
+      <%= f.hidden_field :relation, :value => 'false' %>
+    </div>
     <div class="actions">
       <%= f.submit "Save preferences" %>
     </div>
