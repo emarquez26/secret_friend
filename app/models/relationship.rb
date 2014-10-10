@@ -1,6 +1,6 @@
 class Relationship < ActiveRecord::Base
   def user_player(id)
-    @play = id
+    set_play(id)
     like1 = User.select(:like).where(id: @play)
     dislike1 = User.select(:dislike).where(id: @play)
     users_available
@@ -24,5 +24,9 @@ class Relationship < ActiveRecord::Base
   def change_relation
     change_relation = { @play => { "relation" => "true" }, @player2 => { "relation" => "true" } }
     Relationship.update(change_relation.keys, change_relation.values)
+  end
+
+  def set_play(id)
+    @play = id
   end
 end

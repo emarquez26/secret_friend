@@ -28,11 +28,9 @@ RSpec.describe Relationship, :type => :model do
         subject(:change) { relationship.change_relation }
         it "update the relacion between players" do
           change = double("true", :message => :return_value)
-          expect(change_relation.message).to eq(:return_value)
+          expect(change.message).to eq(:return_value)
         end
       end
-
-
     end
   end
 end
