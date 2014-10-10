@@ -4,5 +4,5 @@ Things you may want to cover:
 
 -Ruby
 -run bundle install
--run rake rb:migration
+-run rake db:migration
 -this app work with Postgres database

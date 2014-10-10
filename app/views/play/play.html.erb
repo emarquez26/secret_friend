@@ -1,3 +1,13 @@
 <center>
-  <%= button_to("Realizar Sorteo", { action: "index" }, class: "myButton") %>
+  <div class="title">
+    <h3>play Love and Friendship</h3>
+  </div><br><br><br><br><br>
+
+  <nav>
+    <li class="lin"><%= link_to "Complete your register", :controller=>'users', :action=>'new' %></li>
+  </nav><div class='clear'></div><br>
+
+  <%= form_tag :action=>'play' do %>
+        <%= submit_tag "Save preferences", :class => 'button' %>
+  <% end %>
 </center>

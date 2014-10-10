@@ -1,26 +1,27 @@
 <center>
   <div class="title">
-    <h1>Bienvenido complete su registro</h1>
-  </div>
+    <h3>Welcome complete your register</h3>
+  </div><br><br><br><br><br>
+
+  <nav>
+    <li class="lin"><%= link_to "Play love and friendship", :controller=>'play', :action=>'play' %></li>
+  </nav><div class='clear'></div><br>
 
   <%= form_for(@user) do |f| %>
-    <div class="field">
-      <%= f.label :name %><br>
-      <%= f.text_field :name,:size=>"50",:readonly => true,:value => @users %>
-    </div><br>
-    <div class="field">
-      <%= f.label :like %><br>
-      <%= f.text_area :like %>
-    </div><br>
-    <div class="field">
-      <%= f.label :dislike %><br>
-      <%= f.text_area :dislike, :rows => 8, :cols => 50 %>
-    </div>
-    <div class="field">
-      <%= f.hidden_field :relation, :value => 'false' %>
-    </div>
-    <div class="actions">
-      <%= f.submit "Save preferences" %>
+    <div id='ew'>
+      <div class="fom"><br>
+        <%= f.label :name %><br>
+        <%= f.text_field :name,:size=>"50",:readonly => true,:value => @users %>
+        <br><br>
+        <%= f.label :like %><br>
+        <%= f.text_area :like, :rows => 4, :cols => 50, :class => 'text_area' %>
+        <br>
+        <%= f.label :dislike %><br>
+        <%= f.text_area :dislike, :rows => 4, :cols => 50, :class => 'text_area' %>
+        <br>
+        <%= f.hidden_field :relation, :value => 'false' %>
+        <%= f.submit "Save preferences", :class => 'button' %>
+      </div>
     </div>
   <% end %>
 </center>
