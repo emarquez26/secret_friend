@@ -5,8 +5,7 @@ RSpec.describe "users/new", :type => :request do
     user = User.create(name: "person@koombea.com", like: "chocolate", dislike: "alcohol")
     get new_user_path(user)
 
-    assert_select "form" do
-      assert_select "input" do
+      assert_select "form_for(@post)" do
         assert_select "input[name=?]", "user[name]"
         assert_select "input[type=?]", "submit"
       end
@@ -14,6 +13,5 @@ RSpec.describe "users/new", :type => :request do
         assert_select "textarea", :name => "like"
         assert_select "textarea", :name => "dislike"
       end
-    end
   end
 end

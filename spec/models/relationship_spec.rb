@@ -9,8 +9,7 @@ RSpec.describe Relationship, :type => :model do
       context 'when users available' do
         before(:each) do
           FactoryGirl.create(:user, name: "Luis", like: "anime", dislike: "bailar salsa", email: "b@koombea.com")
-          FactoryGirl.create(:user, name: "Luis", like: "anime", dislike: "bailar salsa", email: "a@koombea.com")
-          relationship.set_play(user.id)
+          FactoryGirl.create(:user, name: "edwin", like: "anime", dislike: "bailar salsa", email: "a@koombea.com")
         end
         it { expect(relation).to eql(2) }
       end
@@ -18,8 +17,7 @@ RSpec.describe Relationship, :type => :model do
       context 'when users aren\'t available' do
         before(:each) do
           FactoryGirl.create(:user, name: "Luis", like: "anime", dislike: "bailar salsa", email: "b@koombea.com", relation: "true")
-          FactoryGirl.create(:user, name: "Luis", like: "anime", dislike: "bailar salsa", email: "a@koombea.com", relation: "true")
-          relationship.set_play(user.id)
+          FactoryGirl.create(:user, name: "edwin", like: "anime", dislike: "bailar salsa", email: "a@koombea.com", relation: "true")
         end
         it { expect(relation).to eql(0) }
       end

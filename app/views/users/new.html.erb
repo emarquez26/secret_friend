@@ -1,26 +1,21 @@
 <center>
   <div class="title">
-    <h3>Welcome complete your register</h3>
+    <h3>Welcome <strong><%= @my_email %></strong> complete your register</h3>
   </div><br><br><br><br><br>
 
   <nav>
-    <li class="lin"><%= link_to "Play love and friendship", :controller=>'play', :action=>'play' %></li>
-  </nav><div class='clear'></div><br>
-
+    <li class="lin"><%= link_to "Play love and friendship", :controller=>'play', :action=>'index' %></li>
+  </nav><div class='clear'></div><br>    
   <%= form_for(@user) do |f| %>
     <div id='ew'>
       <div class="fom"><br>
-        <%= f.label :name %><br>
-        <%= f.text_field :name,:size=>"50",:readonly => true,:value => @users %>
-        <br><br>
         <%= f.label :like %><br>
-        <%= f.text_area :like, :rows => 4, :cols => 50, :class => 'text_area' %>
-        <br>
+        <%= f.text_area :like, size: "50x4", :class => 'text_area' %><br><br>
+
         <%= f.label :dislike %><br>
-        <%= f.text_area :dislike, :rows => 4, :cols => 50, :class => 'text_area' %>
-        <br>
-        <%= f.hidden_field :relation, :value => 'false' %>
-        <%= f.submit "Save preferences", :class => 'button' %>
+        <%= f.text_area :dislike, size: "50x4", :class => 'text_area' %><br>
+
+        <%= f.submit :class => 'button' %>
       </div>
     </div>
   <% end %>

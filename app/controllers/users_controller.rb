@@ -1,28 +1,21 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_user, only: [:show]
-
-  def show
-  end
+  before_action :set_user, only: [:update, :new]
 
   def new
-    @user = User.new
+    @my_email = current_user.email
   end
 
-  def create
-    @user = User.new(user_params)
-    respond_to do |format|
-      if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
-        format.json { render :show, status: :created, location: @user }
-      else
-        format.html { render :new }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
-      end
+  def update
+    if @user.update(user_params)
+      redirect_to root_path
     end
   end
 
   private
+    def set_user
+      @user = User.find(current_user.id)
+    end
     def user_params
       params.require(:user).permit(:name, :like, :dislike, :relation)
     end

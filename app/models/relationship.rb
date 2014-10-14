@@ -1,32 +1,35 @@
 class Relationship < ActiveRecord::Base
   def user_player(id)
-    set_play(id)
-    like1 = User.select(:like).where(id: @play)
-    dislike1 = User.select(:dislike).where(id: @play)
+    my_data(id)
     users_available
-    unless @total==0
+    unless @total==0 and @my_dates.relation == "t"
       @player2 = @hash_user[rand(@hash_user.length)]
-      like2 = User.select(:like).where("id = ?", @player2).first.like
-      dislike2 = User.select(:dislike).where("id = ?", @player2).first.dislike
-      Relationship.create(player1_id: @play, player2_id: @player2, like_player1: like1, 
-        dislike_player1: dislike1, like_player2: like2, dislike_player2: dislike2)
+      
+      @dates_player2 = User.find(@player2)
+      save_relation = Relationship.new({
+        :player1_id => @my_id, :player2_id => @player2,
+        :like_player1 => @my_dates.like, :like_player2 => @dates_player2.like,
+        :dislike_player1 => @my_dates.relation, :dislike_player2 => @dates_player2.dislike
+      })
+      save_relation.save
       change_relation
     end
   end
 
+  def my_data(id)
+    @my_id = id
+    @my_dates = User.find(@my_id)
+  end
+
   def users_available
     @hash_user = []
-    user = User.select("id").where(relation: 'false').where.not(id: @play)
+    user = User.select("id").where(relation: 'false').where.not(id: @my_id)
     user.each{ |users| @hash_user << users.id }
     @total = user.length
   end
 
   def change_relation
-    change_relation = { @play => { "relation" => "true" }, @player2 => { "relation" => "true" } }
-    Relationship.update(change_relation.keys, change_relation.values)
-  end
-
-  def set_play(id)
-    @play = id
+    change_relation = { @my_id => { "relation" => "true" }, @player2 => { "relation" => "true" } }
+    User.update(change_relation.keys, change_relation.values)
   end
 end
