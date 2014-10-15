@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+
 	devise :database_authenticatable, :registerable,
 	         :recoverable, :rememberable, :trackable, :validatable
 	devise :omniauthable, :omniauth_providers => [:google_oauth2]
@@ -15,4 +16,13 @@ class User < ActiveRecord::Base
 	    end
 	    user
 	end
+
+	def self.users_available(id)
+		where(relation: 'false').where.not(id: id)
+	end
+
+	def self.change_relation(my_id, secret_friend_id)
+    change_relation = { my_id => { "relation" => "true" }, secret_friend_id => { "relation" => "true" } }
+    update(change_relation.keys, change_relation.values)
+  end
 end

@@ -5,6 +5,7 @@ group :test, :development do
   gem 'rspec-rails'
   gem 'capybara'
 end
+gem 'faker', '~> 1.4.3'
 gem 'devise'
 gem 'pg'
 gem "omniauth-google-oauth2"

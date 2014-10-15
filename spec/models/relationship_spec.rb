@@ -2,33 +2,28 @@ require 'rails_helper'
 
 RSpec.describe Relationship, :type => :model do
   describe "Methods" do
-    describe "#users_available" do
-      subject(:relation) { relationship.users_available }
-      let(:relationship) { Relationship.new }
-      let(:user) { FactoryGirl.create(:user) }
+    describe "#user_player" do
+      before(:each) do
+        users
+      end
+      let(:users) { FactoryGirl.create(:user) }
+      let(:user_relation) { User.users_available(users)}
+      let(:users_available) {Relationship.new.users_available }
+      let(:user_rand) { rand(1..5) }
       context 'when users available' do
         before(:each) do
           FactoryGirl.create(:user, name: "Luis", like: "anime", dislike: "bailar salsa", email: "b@koombea.com")
-          FactoryGirl.create(:user, name: "edwin", like: "anime", dislike: "bailar salsa", email: "a@koombea.com")
         end
-        it { expect(relation).to eql(2) }
+        it { expect(user_relation).not_to be_empty }
       end
 
-      context 'when users aren\'t available' do
+      context 'when not users available' do
         before(:each) do
-          FactoryGirl.create(:user, name: "Luis", like: "anime", dislike: "bailar salsa", email: "b@koombea.com", relation: "true")
-          FactoryGirl.create(:user, name: "edwin", like: "anime", dislike: "bailar salsa", email: "a@koombea.com", relation: "true")
+          FactoryGirl.create(:user, name: "Luis", like: "anime", dislike: "bailar salsa", email: "b@koombea.com", relation: "true") 
         end
-        it { expect(relation).to eql(0) }
+        it { expect(user_relation).to be_empty }
       end
 
-      context 'when update relation between players' do
-        subject(:change) { relationship.change_relation }
-        it "update the relacion between players" do
-          change = double("true", :message => :return_value)
-          expect(change.message).to eq(:return_value)
-        end
-      end
     end
   end
 end
