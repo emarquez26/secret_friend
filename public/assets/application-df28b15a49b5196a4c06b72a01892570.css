@@ -1,0 +1,140 @@
+/* line 1, /Users/koombea/Desktop/proyects_rails/secret_friend/app/assets/stylesheets/users.css.scss */
+body {
+  background: #b5bdc8;
+  background: -moz-linear-gradient(45deg, #b5bdc8 0%, #828c95 36%, #28343b 100%);
+  background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, #b5bdc8));
+  background: -webkit-linear-gradient(45deg, #b5bdc8 0%);
+  background: -o-linear-gradient(45deg, #b5bdc8 0%, #828c95 36%, #28343b 100%);
+  background: -ms-linear-gradient(45deg, #b5bdc8 0%, #828c95 36%, #28343b 100%);
+  background: linear-gradient(90deg, #b5bdc8 0%, #828c95 36%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#b5bdc8', endColorstr='#28343b',GradientType=1 );
+}
+
+/* line 11, /Users/koombea/Desktop/proyects_rails/secret_friend/app/assets/stylesheets/users.css.scss */
+.title {
+  height: 50px;
+  width: 90%;
+  background-color: #777777;
+  border-radius: 15px 35px 10px 34px;
+  transition: All 1s ease;
+  -webkit-transition: All 1s ease;
+  -moz-transition: All 1s ease;
+  -o-transition: All 1s ease;
+  transform: rotate(4deg) scale(1) skew(1deg) translate(8px);
+  -webkit-transform: rotate(4deg) scale(1) skew(1deg) translate(8px);
+  -moz-transform: rotate(4deg) scale(1) skew(1deg) translate(10px);
+  -o-transform: rotate(4deg) scale(1) skew(1deg) translate(10px);
+  -ms-transform: rotate(4deg) scale(1) skew(1deg) translate(10px);
+}
+
+/* line 26, /Users/koombea/Desktop/proyects_rails/secret_friend/app/assets/stylesheets/users.css.scss */
+.title:hover {
+  ransform: rotate(0deg) scale(1) skew(1deg) translate(0px);
+  -webkit-transform: rotate(0deg) scale(1) skew(1deg) translate(0px);
+  -moz-transform: rotate(0deg) scale(1) skew(1deg) translate(0px);
+  -o-transform: rotate(0deg) scale(1) skew(1deg) translate(0px);
+  -ms-transform: rotate(0deg) scale(1) skew(1deg) translate(0px);
+  cursor: nw-resize;
+  -moz-box-shadow: 1px 7px 32px #1e2547;
+  -webkit-box-shadow: 1px 7px 32px #1e2547;
+  box-shadow: 1px 7px 32px #1e2547;
+}
+
+/* line 37, /Users/koombea/Desktop/proyects_rails/secret_friend/app/assets/stylesheets/users.css.scss */
+nav li {
+  float: left;
+  width: 180px;
+  height: 20px;
+  list-style: none;
+  border: solid 1px #999;
+  margin-right: 10px;
+  background-repeat: no-repeat;
+  -moz-border-radius: 5px 15px 5px 5px;
+  -webkit-border-radius: 5px 15px 5px 5px;
+  text-align: center;
+  background-color: #00FF4D;
+}
+
+/* line 50, /Users/koombea/Desktop/proyects_rails/secret_friend/app/assets/stylesheets/users.css.scss */
+nav li:hover {
+  background-color: #cccccc;
+}
+
+/* line 53, /Users/koombea/Desktop/proyects_rails/secret_friend/app/assets/stylesheets/users.css.scss */
+.fom {
+  border-radius: 21px 15px 25px 14px;
+  height: auto;
+  width: 100%;
+  box-shadow: 4px 0px 7px #424242;
+  background-color: rgba(127, 127, 128, 0.3);
+  background: rgba(127, 127, 128, 0.3);
+}
+
+/* line 61, /Users/koombea/Desktop/proyects_rails/secret_friend/app/assets/stylesheets/users.css.scss */
+#ew {
+  height: 100%;
+}
+
+/* line 64, /Users/koombea/Desktop/proyects_rails/secret_friend/app/assets/stylesheets/users.css.scss */
+.button {
+  box-shadow: 4px 5px 7px #424242;
+  border-radius: 21px;
+  border-top: 1px solid #839399;
+  border-bottom: 1px solid #839399;
+  border-left: 1px solid #839399;
+  border-right: 1px solid #839399;
+  font-family: Verdana;
+  font-size: 2;
+  font-weight: bold;
+  color: black;
+}
+
+/* line 76, /Users/koombea/Desktop/proyects_rails/secret_friend/app/assets/stylesheets/users.css.scss */
+.button:hover {
+  background-color: rgba(53, 26, 76, 0.3);
+  box-shadow: 4px 0px 6px #98A1AB;
+  color: white;
+}
+
+/* line 81, /Users/koombea/Desktop/proyects_rails/secret_friend/app/assets/stylesheets/users.css.scss */
+h3 {
+  font: oblique 120% sans-serif bold;
+  font-size: 25px;
+  color: white;
+}
+
+/* line 86, /Users/koombea/Desktop/proyects_rails/secret_friend/app/assets/stylesheets/users.css.scss */
+.text_area {
+  border-radius: 10px 25px 30px 25px;
+  font-family: Monaco,Georgia,Times,serif;
+}
+
+/* line 90, /Users/koombea/Desktop/proyects_rails/secret_friend/app/assets/stylesheets/users.css.scss */
+strong {
+  color: black;
+}
+
+/* line 93, /Users/koombea/Desktop/proyects_rails/secret_friend/app/assets/stylesheets/users.css.scss */
+a {
+  text-decoration: none;
+}
+
+/* line 96, /Users/koombea/Desktop/proyects_rails/secret_friend/app/assets/stylesheets/users.css.scss */
+.clear {
+  clear: both;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */

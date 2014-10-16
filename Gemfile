@@ -8,6 +8,7 @@ end
 gem 'faker', '~> 1.4.3'
 gem 'devise'
 gem 'pg'
+gem 'rails_12factor'
 gem "omniauth-google-oauth2"
 gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier', '>= 1.3.0'
