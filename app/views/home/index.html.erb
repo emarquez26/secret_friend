@@ -1,2 +1,5 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<center>
+  <nav>
+    <li class="myButton"><%= link_to "start playing love and friendship", :controller=>'users', :action=>'new' if !current_user %></li>
+  </nav>
+</center>

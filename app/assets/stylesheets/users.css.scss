@@ -36,7 +36,7 @@ body{
 }
 nav li{
    float: left;
-   width: 180px;
+   width: auto;
    height: 20px;
    list-style: none;
    border: solid 1px #999;
@@ -92,6 +92,28 @@ strong{
 }
 a{
   text-decoration: none;
+}
+.myButton {
+  background-color:#44c767;
+  -moz-border-radius:35px;
+  -webkit-border-radius:35px;
+  border-radius:35px;
+  border:3px solid #18ab29;
+  display:inline-block;
+  cursor:pointer;
+  color:#46b88e;
+  font-family:Georgia;
+  font-size:20px;
+  padding:15px 41px;
+  text-decoration:none;
+  text-shadow:-1px -1px 3px #2f6627;
+}
+.myButton:hover {
+  background-color:#5cbf2a;
+}
+.myButton:active {
+  position:relative;
+  top:1px;
 }
 .clear{
 	clear: both;

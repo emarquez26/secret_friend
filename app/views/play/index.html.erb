@@ -1,13 +1,24 @@
-<center>
-  <div class="title">
-    <h3>play Love and Friendship</h3>
-  </div><br><br><br><br><br>
+<nav>
+  <li class="lin"><%= link_to "Complete your register with your preferences", :controller=>'users', :action=>'new' %></li>
+</nav><div class='clear'></div><br>
 
-  <nav>
-    <li class="lin"><%= link_to "Complete your register", :controller=>'users', :action=>'new' %></li>
-  </nav><div class='clear'></div><br>
-
-  <%= form_tag :action=>'index' do %>
-    <%= submit_tag "search secret friend", :class => 'button' %>
-  <% end %>
+<div class="fom">
+<div id="nm">
+    <h3>Secret Friend</h3>
+  </div>
+<table border='1'>
+  <thead>
+    <tr>
+      <th>Name friend secret</th>
+      <th>Like friend secret</th>
+      <th>Dislike friend secret</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= @user_play.name %></td>
+      <td><%= @user_play.like %></td>
+      <td><%= @user_play.dislike %></td>
+    </tr>
+  </tbody>
+</table>
 </center>
